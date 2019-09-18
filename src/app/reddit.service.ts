@@ -21,10 +21,11 @@ export class RedditService {
     }
 
     getNewsIds(): Observable<any> {
-        // return this.http.get('https://hacker-news.firebaseio.com/v0/topstories.json').pipe(
-        //     // filter((data, i) => { console.log(i); return i < 20; }),
-        //     mergeMap(ids => forkJoin(ids.filter((x, i) => i < 20).map(id => this.http.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`))))
-        // )
+        // GET NEWS IDS AS ARRAY AND THEN SLICE IT AND RETURN IT AS OBSERVABLE USING RXJS MAP CODE
+        // return this.http.get('https://hacker-news.firebaseio.com/v0/topstories.json').pipe(map((x: Array<any>) => {
+        //     console.log(x);
+        //     return x.slice(0, 10)
+        // }))
         return this.http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
     }
 
