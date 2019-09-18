@@ -1,0 +1,37 @@
+/* .example-fill-remaining-space {
+  This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+} */
+/* a {
+  color: #fff;
+} */
+/* .homePageLinks {
+  position: absolute;
+  right: 2%;
+} */
+.menu-spacer {
+    flex: 1 1 auto;
+}
+.class1 {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.mat-drawer-container {
+    color: #fff;
+}
+mat-sidenav-container {
+    background-color: #dcd0c0;
+    min-height: 100vh !important;
+}
+.mat-toolbar.mat-primary {
+    background-color: #fff;
+}
+a {
+    color: #373737;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* mat-sidenav-content {
+    height: 70vh !important;
+} */

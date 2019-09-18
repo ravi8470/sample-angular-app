@@ -1,0 +1,64 @@
+<div style="text-align: center">
+    <mat-card>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field>
+                    <input
+                        type="text"
+                        matInput
+                        placeholder="Username"
+                        formControlName="username"
+                        class="form-control"
+                        [ngClass]="{
+                            'is-invalid': submitted && f.username.errors
+                        }"
+                    />
+                </mat-form-field>
+                <div
+                    *ngIf="submitted && f.username.errors"
+                    class="invalid-feedback"
+                >
+                    <div *ngIf="f.username.errors.required">
+                        Username is required
+                    </div>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input
+                        type="password"
+                        matInput
+                        formControlName="password"
+                        placeholder="Password"
+                        class="form-control"
+                        [ngClass]="{
+                            'is-invalid': submitted && f.password.errors
+                        }"
+                    />
+                </mat-form-field>
+                <div
+                    *ngIf="submitted && f.password.errors"
+                    class="invalid-feedback"
+                >
+                    <div *ngIf="f.password.errors.required">
+                        Password is required
+                    </div>
+                </div>
+            </div>
+            <span>
+                <button [disabled]="loading" mat-raised-button>
+                    <!-- <span
+                        *ngIf="loading"
+                        class="spinner-border spinner-border-sm mr-1"
+                    ></span> -->
+                    <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+                    Login
+                </button>
+
+                <a routerLink="/register" class="btn btn-link" mat-raised-button
+                    >Register</a
+                >
+            </span>
+        </form>
+    </mat-card>
+</div>

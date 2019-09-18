@@ -1,21 +1,130 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <div style="text-align:center">
+  <mat-toolbar><span style="margin:auto">News</span></mat-toolbar>
+</div> -->
+<!-- <mat-toolbar>
+  <div class="navContainer">
+    <span class="heading">News</span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="homePageLinks">
+      <a routerLink="">Home</a>&nbsp;&nbsp;
+      <a routerLink="news">News</a>&nbsp;&nbsp;
+      <a routerLink="flex">Flexbox</a>&nbsp;&nbsp;
+      <a routerLink="reddit-news">Reddit News</a>
+    </span>
+  </div>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<br /><br /> -->
+
+<div #pageContainer>
+    <mat-toolbar color="primary" #toolbarContainer>
+        <mat-toolbar-row>
+            <button
+                mat-icon-button
+                (click)="sidenav.toggle()"
+                fxShow="true"
+                fxHide.gt-sm
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span style="color: #6B7A8F">News</span>
+            <span class="menu-spacer"></span>
+            <div fxShow="true" fxHide.lt-md>
+                <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+                <a
+                    routerLink=""
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Home</a
+                >&nbsp;&nbsp;
+                <a
+                    routerLink="movies"
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Movies</a
+                >&nbsp;&nbsp;
+                <a
+                    routerLink="news"
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >News</a
+                >&nbsp;&nbsp;
+                <a
+                    routerLink="flex"
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Flexbox</a
+                >&nbsp;&nbsp;
+                <a
+                    routerLink="reddit-news"
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Reddit News</a
+                >&nbsp;&nbsp;
+                <a
+                    routerLink="login"
+                    routerLinkActive="class1"
+                    *ngIf="!isLoggedIn"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Login</a
+                >
+                <a *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+            <mat-nav-list>
+                <a
+                    routerLink=""
+                    mat-list-item
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Home</a
+                >
+                <a
+                    routerLink="movies"
+                    mat-list-item
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Movies</a
+                >
+                <a
+                    routerLink="news"
+                    mat-list-item
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >News</a
+                >
+                <a
+                    routerLink="flex"
+                    mat-list-item
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Flexbox</a
+                >
+                <a
+                    routerLink="reddit-news"
+                    mat-list-item
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Reddit News</a
+                >
+                <a
+                    routerLink="login"
+                    mat-list-item
+                    *ngIf="!isLoggedIn"
+                    routerLinkActive="class1"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Login</a
+                >
+                <a mat-list-item *ngIf="isLoggedIn">Logout</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content
+            ><router-outlet></router-outlet
+        ></mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

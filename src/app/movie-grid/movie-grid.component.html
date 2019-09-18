@@ -1,0 +1,43 @@
+<div style="text-align: center">
+  <mat-form-field>
+    <input matInput placeholder="Movie title" type="text" #text />
+  </mat-form-field>
+  <button (click)="search()" mat-raised-button>search</button>
+</div>
+
+<mat-grid-list cols="3" rowHeight="2:1.8">
+  <ngx-spinner
+    type="line-scale-pulse-out"
+    bdColor="rgba(51,51,51,0.2)"
+    [fullScreen]="false"
+  ></ngx-spinner>
+  <mat-grid-tile
+    *ngFor="
+      let movie of movies
+        | paginate
+          : {
+              itemsPerPage: 10,
+              currentPage: currentPage,
+              totalItems: totalResults
+            }
+    "
+    ><img
+      src="{{ movie.Poster }}"
+      alt="{{ movie.Title }}"
+      style="width: 80%;height: 80%;"
+  /></mat-grid-tile>
+</mat-grid-list>
+<div style="text-align: center">
+  <pagination-controls
+    (pageChange)="search($event)"
+    maxSize="9"
+    directionLinks="true"
+    autoHide="true"
+    responsive="true"
+    previousLabel="Previous"
+    nextLabel="Next"
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page"
+    screenReaderCurrentLabel="You're on page"
+  ></pagination-controls>
+</div>

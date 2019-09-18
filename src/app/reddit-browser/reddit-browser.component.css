@@ -1,0 +1,12 @@
+mat-card {
+    margin-bottom: 2px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+mat-card {
+    background-color: #dcd0c0;
+    color: #373737;
+    font-weight: bold;
+}

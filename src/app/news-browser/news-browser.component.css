@@ -1,0 +1,13 @@
+.abc {
+    text-decoration-color: inherit;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+mat-card {
+    background-color: #dcd0c0;
+    color: #373737;
+    margin-bottom: 2px;
+    font-weight: bold;
+}

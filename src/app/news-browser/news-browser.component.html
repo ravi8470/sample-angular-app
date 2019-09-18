@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutAlign="center start" gdAlignRows="start stretch">
+    <ngx-spinner
+        type="line-scale-pulse-out"
+        bdColor="rgba(51,51,51,0.2)"
+        [fullScreen]="false"
+    ></ngx-spinner>
+    <div
+        *ngFor="
+            let item of news
+                | paginate
+                    : {
+                          itemsPerPage: 10,
+                          currentPage: currentPage,
+                          totalItems: allNewsIds.length
+                      }
+        "
+        fxFlex="1 1 100%"
+    >
+        <a href="{{ item.url }}" target="blank">
+            <mat-card>
+                {{ item.title }}
+            </mat-card></a
+        >
+    </div>
+</div>
+<div style="text-align: center">
+    <pagination-controls
+        (pageChange)="getNews($event)"
+        maxSize="9"
+        directionLinks="true"
+        autoHide="true"
+        responsive="true"
+        previousLabel="Previous"
+        nextLabel="Next"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+    ></pagination-controls>
+</div>

@@ -1,0 +1,16 @@
+<div
+    fxLayout="column"
+    fxLayoutAlign="center start"
+    gdAlignRows="start stretch"
+    style="min-height: 1000px"
+>
+    <ngx-spinner [fullScreen]="false"></ngx-spinner>
+    <div *ngFor="let item of posts">
+        <a
+            href="https://www.reddit.com{{ item.data.permalink }}"
+            target="blank"
+        >
+            <mat-card>{{ item.data.title }}</mat-card>
+        </a>
+    </div>
+</div>
