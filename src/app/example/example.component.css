@@ -1,0 +1,4 @@
+.homePageList {
+    display: flex;
+    place-content: center;
+}
