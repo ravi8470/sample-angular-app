@@ -38,3 +38,8 @@ a {
 .menuButton {
     color: black;
 }
+
+.appTitle {
+    color: #6b7a8f;
+    cursor: pointer;
+}
