@@ -11,39 +11,36 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
-    {
-        path: '',
-        component: ExampleComponent,
-        pathMatch: 'full'
-    },
-    {
-        path: 'news',
-        component: NewsBrowserComponent,
-        pathMatch: 'full',
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'reddit-news',
-        component: RedditBrowserComponent
-    },
-    {
-        path: 'flex',
-        component: FlexboxComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'movies',
-        component: MovieGridComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent,
-        pathMatch: 'full',
-    },
+  {
+    path: '',
+    component: ExampleComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./news-browser/news-browser.module').then(m => m.NewsBrowserModule)
+  },
+  {
+    path: 'reddit-news',
+    loadChildren: () => import('./reddit-browser/reddit-browser.module').then(m => m.RedditBrowserModule)
+  },
+  // {
+  //   path: 'flex',
+  //   component: FlexboxComponent,
+  //   canActivate: [AuthGuard]
+  // },
+  {
+    path: 'movies',
+    loadChildren: () => import('./movie-grid/movie-grid.module').then(m => m.MovieGridModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

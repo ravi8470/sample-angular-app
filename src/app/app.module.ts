@@ -1,48 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ObserversModule } from '@angular/cdk/observers';
+import { PlatformModule } from '@angular/cdk/platform';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule } from "@angular/material/card";
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from "@angular/material/divider";
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from "@angular/material/list";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RedditBrowserComponent } from './reddit-browser/reddit-browser.component';
-import { MatDividerModule } from "@angular/material/divider";
-import { MatListModule } from "@angular/material/list";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { NewsBrowserComponent } from './news-browser/news-browser.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { PlatformModule } from '@angular/cdk/platform';
-import { ObserversModule } from '@angular/cdk/observers';
-import { FlexboxComponent } from './flexbox/flexbox.component';
-import { MatButtonModule } from '@angular/material/button';
-import { NgxSpinnerModule } from "ngx-spinner";
 import { ExampleComponent } from './example/example.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MovieGridComponent } from './movie-grid/movie-grid.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { MatInputModule } from '@angular/material/input';
-import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RedditBrowserComponent,
-    NewsBrowserComponent,
-    FlexboxComponent,
     ExampleComponent,
-    MovieGridComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule,
     MatDividerModule,
     MatListModule,
     MatToolbarModule,
@@ -52,16 +35,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     }),
     ObserversModule,
     PlatformModule,
-    MatButtonModule,
-    NgxSpinnerModule,
     MatIconModule,
     MatSidenavModule,
     MatGridListModule,
-    NgxPaginationModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
