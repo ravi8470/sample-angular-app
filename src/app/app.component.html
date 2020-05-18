@@ -24,18 +24,19 @@
   </mat-toolbar>
 
   <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
+    <mat-sidenav [(opened)]="isSideNavOpened" (opened)="isSideNavOpened = true" #sidenav>
       <mat-nav-list>
-        <a routerLink="" mat-list-item routerLinkActive="class1" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="movies" mat-list-item routerLinkActive="class1"
+        <a (click)='routeTo("")' mat-list-item routerLinkActive="class1"
+          [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a (click)='routeTo("movies")' mat-list-item routerLinkActive="class1"
           [routerLinkActiveOptions]="{ exact: true }">Movies</a>
-        <a routerLink="news" mat-list-item routerLinkActive="class1"
+        <a (click)='routeTo("news")' mat-list-item routerLinkActive="class1"
           [routerLinkActiveOptions]="{ exact: true }">News</a>
         <!-- <a routerLink="flex" mat-list-item routerLinkActive="class1"
           [routerLinkActiveOptions]="{ exact: true }">Flexbox</a> -->
-        <a routerLink="reddit-news" mat-list-item routerLinkActive="class1"
+        <a (click)='routeTo("reddit-news")' mat-list-item routerLinkActive="class1"
           [routerLinkActiveOptions]="{ exact: true }">r/Programming</a>
-        <a routerLink="login" mat-list-item *ngIf="!isLoggedIn" routerLinkActive="class1"
+        <a (click)='routeTo("login")' mat-list-item *ngIf="!isLoggedIn" routerLinkActive="class1"
           [routerLinkActiveOptions]="{ exact: true }">Login</a>
         <a mat-list-item *ngIf="isLoggedIn">Logout</a>
       </mat-nav-list>
