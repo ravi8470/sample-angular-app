@@ -3,7 +3,6 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './example/example.component';
@@ -38,6 +38,7 @@ import { ExampleComponent } from './example/example.component';
     MatIconModule,
     MatSidenavModule,
     MatGridListModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
