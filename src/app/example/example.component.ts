@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RedditService } from '../reddit.service';
+import { RedditService } from '../_services/reddit.service';
 
 @Component({
   selector: 'app-example',

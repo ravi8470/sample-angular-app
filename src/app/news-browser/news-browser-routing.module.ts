@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsBrowserComponent } from './news-browser.component';
-import { AuthGuard } from '../auth.guard';
+import { AuthGuard } from '../_guards/auth.guard';
 
 
 const routes: Routes = [
